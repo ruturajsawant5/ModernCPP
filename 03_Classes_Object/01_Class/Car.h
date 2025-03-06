@@ -2,7 +2,7 @@
 struct Car
 {
 private:
-  float fuel{ 0 };
+  float fuel{ 0 }; //non static data member initialization
   float speed{ 0 };
   int passengers{ 0 };
   int arr[5] = { 1, 2, 3 };
