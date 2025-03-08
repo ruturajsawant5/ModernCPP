@@ -5,11 +5,11 @@
 void
 Process (Integer val)
 {
-
 }
-Integer Add(int x, int y)
+Integer
+Add (int x, int y)
 {
-  return Integer(x+y);
+  return Integer (x + y);
 }
 
 int
@@ -17,11 +17,11 @@ main ()
 {
   Integer a (3);
   std::cout << "-----------------" << std::endl;
-  Integer b(a);
+  Integer b (a);
   std::cout << "-----------------" << std::endl;
   Process (a);
   std::cout << "-----------------" << std::endl;
-  Integer c  = Add(4, 6);
+  Integer c = Add (4, 6);
   std::cout << "-----------------" << std::endl;
   return 0;
 }

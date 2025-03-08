@@ -12,9 +12,9 @@ int
 main ()
 {
   Integer a (1), b (3);
-  //a.SetValue (Add (a, b).GetValue ());
-  Integer c = Add(a, b);
+  // a.SetValue (Add (a, b).GetValue ());
+  Integer c = Add (a, b);
   return 0;
 }
-//Copy Elision
-//g++ -fno-elide-constructors Integer.cpp main.cpp
+// Copy Elision
+// g++ -fno-elide-constructors Integer.cpp main.cpp
