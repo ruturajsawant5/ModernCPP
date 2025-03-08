@@ -1,5 +1,6 @@
 format.sh
 .vscode
+.idea
 
 # Prerequisites
 *.d
