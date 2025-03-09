@@ -3,7 +3,7 @@
 #include <memory>
 
 void
-Display (Integer *p)
+Display (const Integer *p)
 {
   if (!p)
     return;
@@ -18,18 +18,18 @@ GetPointer (int value)
 }
 
 void
-Store (std::unique_ptr<Integer> p)
+Store (const std::unique_ptr<Integer>& p)
 {
   std::cout << "Saving to File" << *p << std::endl;
 }
 
 void
-Store2 (std::unique_ptr<Integer> &p)
+Store2 (const std::unique_ptr<Integer> &p)
 {
   std::cout << "Saving to File" << *p << std::endl;
 }
 void
-Operate (int value)
+Operate (const int& value)
 {
   // Integer* p = GetPointer(value);
   std::unique_ptr<Integer> p (
@@ -37,10 +37,10 @@ Operate (int value)
                            // explicit constructor so no =
 
   if (!p)
-    {
-      // p = new Integer();
-      p.reset (new Integer ());
-    }
+  {
+    // p = new Integer();
+    p.reset (new Integer ());
+  }
 
   // Display(p);
   Display (p.get ());
@@ -59,9 +59,11 @@ Operate (int value)
   // _Dp = std::default_delete<Integer>] Store(std::move(p)); shout not use p
   // NOiW Display(p.get());
 
-  // pass by reference so its fine
+  // pass by reference so it is fine
   Store2 (p);
   Display (p.get ());
+
+   // delete p;
 }
 
 int

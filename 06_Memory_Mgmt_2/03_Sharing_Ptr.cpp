@@ -14,7 +14,7 @@ public:
   }
 
   void
-  SetName (std::string name)
+  SetName (const std::string& name)
   {
     this->name = name;
   }
@@ -23,7 +23,7 @@ public:
 class Employee
 {
   std::string name;
-  Project *prj;
+  Project *prj = nullptr;
 
 public:
   std::string
@@ -33,7 +33,7 @@ public:
   }
 
   void
-  SetName (std::string name)
+  SetName (const std::string& name)
   {
     this->name = name;
   }
@@ -51,7 +51,7 @@ public:
   }
 
   void
-  display ()
+  display () const
   {
     std::cout << "EMP NAME: " << name << std::endl;
     std::cout << "PRJ NAME: " << prj->GetName () << std::endl;

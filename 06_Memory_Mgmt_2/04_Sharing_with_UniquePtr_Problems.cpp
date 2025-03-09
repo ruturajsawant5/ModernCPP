@@ -15,7 +15,7 @@ public:
   }
 
   void
-  SetName (std::string name)
+  SetName (const std::string& name)
   {
     this->name = name;
   }
@@ -35,7 +35,7 @@ public:
   }
 
   void
-  SetName (std::string name)
+  SetName (const std::string& name)
   {
     this->name = name;
   }
@@ -53,7 +53,7 @@ public:
   }
 
   void
-  display ()
+  display () const
   {
     std::cout << "EMP NAME: " << name << std::endl;
     std::cout << "PRJ NAME: " << prj->GetName () << std::endl;
@@ -78,6 +78,9 @@ main ()
 
   emp->display ();
   emp2->display ();
+
+  delete emp;
+  delete emp2;
 
   return 0;
 }

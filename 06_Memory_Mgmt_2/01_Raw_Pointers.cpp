@@ -2,7 +2,7 @@
 #include <iostream>
 
 void
-Display (Integer *p)
+Display (const Integer *p)
 {
   if (!p)
     return;
@@ -21,17 +21,17 @@ Operate (int value)
 {
   Integer *p = GetPointer (value);
 
-  if (!p)
-    {
-      p = new Integer ();
-    }
+  // if (!p)
+  //   {
+  //     p = new Integer ();
+  //   }
 
   Display (p);
   p->SetValue (100);
   Display (p);
 
   delete p; // we forget to free p
-  p = nullptr;
+  //p = nullptr;
 
   p = new Integer ();
 

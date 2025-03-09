@@ -36,7 +36,7 @@ public:
         return name;
     }
 
-    void SetProject(std::shared_ptr<Project> &project)
+    void SetProject(const std::shared_ptr<Project> &project)
     {
         this->project = project;
     }
@@ -46,7 +46,7 @@ public:
         return project;
     }
 
-    void display()
+    void display() const
     {
         std::cout << "Name: " << this->name << std::endl;
         std::cout << "Employer: " << project->GetName() << std::endl;
@@ -58,15 +58,19 @@ int main()
     std::shared_ptr<Project> prj (new Project);
     prj->SetName ("GOOGLE");
 
-    Employee *emp = new Employee;
+    auto *emp = new Employee;
     emp->SetName ("RUTURAJ");
     emp->SetProject (prj);
 
-    Employee *emp2 = new Employee;
+    auto *emp2 = new Employee;
     emp2->SetName ("NEW RUTURAJ");
     emp2->SetProject (prj);
 
     emp->display ();
     emp2->display ();
+
+    delete emp;
+    delete emp2;
+
     return 0;
 }

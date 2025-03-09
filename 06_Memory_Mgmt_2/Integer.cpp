@@ -33,7 +33,7 @@ Integer::~Integer ()
 }
 
 void
-Integer::SetValue (int value)
+Integer::SetValue (const int& value)
 {
   *p_int = value;
 }
@@ -45,7 +45,7 @@ Integer::GetValue () const
 }
 
 Integer
-Integer::operator+ (const Integer &obj)
+Integer::operator+ (const Integer &obj) const
 {
   Integer temp;
   *temp.p_int = *p_int + *obj.p_int;
@@ -68,7 +68,7 @@ Integer::operator++ (int)
 }
 
 bool
-Integer::operator== (const Integer &obj)
+Integer::operator== (const Integer &obj) const
 {
   if (*p_int == *obj.p_int)
     return true;
@@ -116,7 +116,7 @@ operator>> (std::istream &in, Integer &obj)
 }
 
 void
-Integer::operator() ()
+Integer::operator() () const
 {
   std::cout << *p_int << std::endl;
 }
