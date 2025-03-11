@@ -1,7 +1,14 @@
-format.sh
 .vscode
 .idea
 .vs
+CMakeFiles
+Debug
+MyExecutable.dir
+x64
+*vcxproj*
+CMakeCache.txt
+*.sln
+cmake_install.cmake
 
 # Prerequisites
 *.d
