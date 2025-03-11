@@ -11,6 +11,10 @@ class Checking : public Account
 {
 public:
     Checking(const std::string& name, float balance);
+    ~Checking();
+
+    //C++11 Inheriting Constructor
+    //using Account::Account;
     void Withdraw(float amt);
 };
 
