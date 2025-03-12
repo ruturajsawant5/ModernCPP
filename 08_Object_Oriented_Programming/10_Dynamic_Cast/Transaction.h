@@ -11,6 +11,6 @@
 //void Transaction(Checking* acc);
 //void Transaction(Savings* acc);
 void Transaction(Account* acc);
-
+void Transaction(Account& acc);
 
 #endif //TRANSACTION_H
