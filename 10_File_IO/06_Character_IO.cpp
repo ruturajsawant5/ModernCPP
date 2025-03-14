@@ -19,6 +19,8 @@ void Read()
 
     std::cout << input.tellg() << std::endl;
 
+	input.clear();
+
     input.seekg(0, std::ios::beg);
 
     std::cout << input.tellg() << std::endl;
@@ -44,6 +46,14 @@ void Write()
         output.put(x);
 
     std::cout << output.tellp() << std::endl;
+
+    output.clear();
+
+    output.seekp(0, std::ios::beg);
+
+    std::string msg {"WORLD"};
+    for(char x : msg)
+        output.put(x);
 
     output.close();
 }
