@@ -16,40 +16,52 @@ public:
 
 int main()
 {
+
     std::string name{"Ruturaj"};
     Integer id{100};
     Integer id2{100};
 
     std::cout << "----------------CASE1----------------" << std::endl;
-    Employee emp1{ "Ruturaj", 100 };
+    Employee emp1{ std::string{"Ruturaj"}, Integer{100} };
     std::cout << "-------------------------------------" << std::endl;
     std::cout << "----------------CASE2----------------" << std::endl;
-    Employee emp2{name, 100};
+    Employee emp2{name, Integer{100}};
     std::cout << "-------------------------------------" << std::endl;
     std::cout << "----------------CASE3----------------" << std::endl;
-    Employee emp3{ "Ruturaj", id };
-//    Employee emp3{ "Ruturaj", std::move(id) };
+    Employee emp3{ std::string{"Ruturaj"}, id };
+    //Employee emp3{ std::string{"Ruturaj"}, std::move(id) };
     std::cout << "-------------------------------------" << std::endl;
     std::cout << "----------------CASE4----------------" << std::endl;
     Employee emp4{ name, id2 };
-  //  Employee emp4{ name, std::move(id2) };
+    //Employee emp4{ name, std::move(id2) };
     std::cout << "-------------------------------------" << std::endl;
 
-    /*
-    -------------------------------------
-    Integer(int)
-    Employee(std::string &&name, int id)
-    -------------------------------------
-    Integer(int)
-    Employee(const std::string &name, int id)
-    -------------------------------------
-    Integer(const Integer&)
-    Employee(const std::string &name, const Integer &id)
-    -------------------------------------
-    Integer(const Integer&)
-    Employee(const std::string &name, const Integer &id)
-    -------------------------------------
-    */
-
+//FOR BOTH CASES
+/*
+Integer(int)
+Integer(int)
+----------------CASE1----------------
+Integer(int)
+Employee
+-------------------------------------
+----------------CASE2----------------
+Integer(int)
+Employee
+-------------------------------------
+----------------CASE3----------------
+Integer(int&&)
+Employee
+-------------------------------------
+----------------CASE4----------------
+Integer(int&&)
+Employee
+-------------------------------------
+~Integer()
+~Integer()
+~Integer()
+~Integer()
+~Integer()
+~Integer()
+*/
     return 0;
 }
