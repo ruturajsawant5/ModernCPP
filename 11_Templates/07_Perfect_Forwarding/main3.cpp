@@ -32,8 +32,9 @@ int main()
     std::cout << "-------------------------------------" << std::endl;
     std::cout << "----------------CASE4----------------" << std::endl;
     Employee emp4{ name, id2 };
-    //Employee emp4{ name, std::move(id2) };
+  //  Employee emp4{ name, std::move(id2) };
     std::cout << "-------------------------------------" << std::endl;
+
     /*
     -------------------------------------
     Integer(int)

@@ -28,31 +28,36 @@ int main()
     Employee emp2{name, 100};
     std::cout << "-------------------------------------" << std::endl;
     std::cout << "----------------CASE3----------------" << std::endl;
-    // Employee emp3{ "Ruturaj", id };
-    Employee emp3{ "Ruturaj", std::move(id) };
+    Employee emp3{ "Ruturaj", id };
+    //Employee emp3{ "Ruturaj", std::move(id) };
     std::cout << "-------------------------------------" << std::endl;
     std::cout << "----------------CASE4----------------" << std::endl;
-    // Employee emp4{ name, id2 };
-    Employee emp4{ name, std::move(id2) };
+    Employee emp4{ name, id2 };
+    //Employee emp4{ name, std::move(id2) };
     std::cout << "-------------------------------------" << std::endl;
+
     /*
-    ----------------CASE1----------------
-    Integer(int)
-    Employee
-    -------------------------------------
-    ----------------CASE2----------------
-    Integer(int)
-    Employee
-    -------------------------------------
-    ----------------CASE3----------------
-    Integer(int&&)
-    Employee
-    -------------------------------------
-    ----------------CASE4----------------
-    Integer(int&&)
-    Employee
-    -------------------------------------
-    */
+----------------CASE1----------------
+Integer(int)
+Integer(int&&)
+Employee(std::string &&name, Integer &&id)
+~Integer()
+-------------------------------------
+----------------CASE2----------------
+Integer(int)
+Integer(int&&)
+Employee(const std::string &name, int&& id)
+~Integer()
+-------------------------------------
+----------------CASE3----------------
+Integer(const Integer&)
+Employee(std::string &&name, int& id)
+-------------------------------------
+----------------CASE4----------------
+Integer(const Integer&)
+Employee(const std::string &name, Integer &id)
+-------------------------------------
+     */
 
     return 0;
 }
