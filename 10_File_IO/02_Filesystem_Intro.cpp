@@ -20,7 +20,6 @@ int main()
     for (auto x : path1)
         std::cout << x << std::endl;
 
-
     std::filesystem::path path{R"(C:\Users\rutur\)"};
     std::filesystem::directory_iterator begin{path};
     std::filesystem::directory_iterator end{}; //sentinel value

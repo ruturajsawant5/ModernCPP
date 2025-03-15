@@ -45,7 +45,7 @@ void retrieve_binary()
     file.read((char*)&recs, sizeof(int));
 	std::cout << recs << std::endl;
 	IP ip{};
-    
+
     for(int i = 0; i < recs; i++)
     {
 		file.read((char*)&ip, sizeof(IP));
