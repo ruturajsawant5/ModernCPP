@@ -18,8 +18,14 @@ public:
     //Copy constructor
     Integer(const Integer &obj);
 
+    //Copy Assignment
+    Integer& operator=(const Integer& obj);
+
     //Move constructor
     Integer(Integer &&obj);
+
+    //Move Assignment
+    Integer& operator=(Integer&& obj);
 
     int GetValue()const;
     void SetValue(int value);

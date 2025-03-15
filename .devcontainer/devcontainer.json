@@ -1,0 +1,19 @@
+{
+    "name": "C++ Dev Container",
+    "build": {
+      "dockerfile": "Dockerfile"
+    },
+    "settings": {
+      "C_Cpp.intelliSenseEngine": "Default",
+      "C_Cpp.autoAddFileAssociations": false
+    },
+    "extensions": [
+      "ms-vscode.cpptools", 
+      "ms-vscode.cmake-tools", 
+      "ms-vscode.remote-containers"
+    ],
+    "forwardPorts": [ 8080 ],
+    "postCreateCommand": "sudo apt-get update && sudo apt-get install -y build-essential gdb",
+    "remoteUser": "vscode"
+  }
+  

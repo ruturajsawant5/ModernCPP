@@ -16,31 +16,41 @@ public:
 
 int main()
 {
-    const std::string name{"Ruturaj"};
-    const Integer id{100};
-    std::cout << "-------------------------------------" << std::endl;
+
+    std::string name{"Ruturaj"};
+    Integer id{100};
+    Integer id2{100};
+
+    std::cout << "----------------CASE1----------------" << std::endl;
     Employee emp1{ "Ruturaj", 100 };
     std::cout << "-------------------------------------" << std::endl;
+    std::cout << "----------------CASE2----------------" << std::endl;
     Employee emp2{name, 100};
     std::cout << "-------------------------------------" << std::endl;
-    Employee emp3{ "Ruturaj", id };
+    std::cout << "----------------CASE3----------------" << std::endl;
+    // Employee emp3{ "Ruturaj", id };
+    Employee emp3{ "Ruturaj", std::move(id) };
     std::cout << "-------------------------------------" << std::endl;
-    Employee emp4{ name, id };
+    std::cout << "----------------CASE4----------------" << std::endl;
+    // Employee emp4{ name, id2 };
+    Employee emp4{ name, std::move(id2) };
     std::cout << "-------------------------------------" << std::endl;
-
     /*
-    -------------------------------------
+    ----------------CASE1----------------
     Integer(int)
-    Employee(std::string &&name, int id)
+    Employee
     -------------------------------------
+    ----------------CASE2----------------
     Integer(int)
-    Employee(const std::string &name, int id)
+    Employee
     -------------------------------------
-    Integer(const Integer&)
-    Employee(const std::string &name, const Integer &id)
+    ----------------CASE3----------------
+    Integer(int&&)
+    Employee
     -------------------------------------
-    Integer(const Integer&)
-    Employee(const std::string &name, const Integer &id)
+    ----------------CASE4----------------
+    Integer(int&&)
+    Employee
     -------------------------------------
     */
 
